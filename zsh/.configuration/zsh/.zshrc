@@ -1,3 +1,5 @@
+# vi: set ft=zsh :
+
 # enable completion
 autoload -Uz compinit
 compinit
