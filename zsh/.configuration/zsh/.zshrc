@@ -1,31 +1,28 @@
 # vi: set ft=zsh :
 
-# enable completion
 autoload -Uz compinit
 compinit
 
-# aliases
 if [ -d ${XDG_CONFIG_HOME}/zsh/aliases ]
 then
-	for file in ${XDG_CONFIG_HOME}/zsh/aliases/*
+	for rc_file in ${XDG_CONFIG_HOME}/zsh/aliases/*
 	do
-		if [ -f "${file}" ]
+		if [ -f "${rc_file}" ]
 		then
-			source "${file}"
+			source "${rc_file}"
 		fi
 	done
-	unset file
+	unset rc_file
 fi
 
-# initialization files
-if [ -d ${XDG_CONFIG_HOME}/zsh/run_commands ]
+if [ -d ${XDG_CONFIG_HOME}/zsh/initialization_files ]
 then
-	for file in ${XDG_CONFIG_HOME}/zsh/run_commands/*
+	for rc_file in ${XDG_CONFIG_HOME}/zsh/initialization_files/*
 	do
-		if [ -f "${file}" ]
+		if [ -f "${rc_file}" ]
 		then
-			source "${file}"
+			source "${rc_file}"
 		fi
 	done
-	unset file
+	unset rc_file
 fi
