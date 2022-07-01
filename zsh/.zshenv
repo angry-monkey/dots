@@ -11,14 +11,14 @@ PATH="${HOME}/.local/bin:${PATH}"
 
 export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
-if [ -d ${XDG_CONFIG_HOME}/zsh/environment ]
+if [ -d ${XDG_CONFIG_HOME}/zsh/environment_variables ]
 then
-	for file in ${XDG_CONFIG_HOME}/zsh/environment/*
+	for rc_file in ${XDG_CONFIG_HOME}/zsh/environment_variables/*
 	do
-		if [ -f "${file}" ]
+		if [ -f "${rc_file}" ]
 		then
-			source "${file}"
+			source "${rc_file}"
 		fi
 	done
-	unset file
+	unset rc_file
 fi
