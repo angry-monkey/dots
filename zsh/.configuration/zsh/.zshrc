@@ -3,6 +3,8 @@
 autoload -Uz compinit
 compinit
 
+bindkey -v
+
 if [ -d ${XDG_CONFIG_HOME}/zsh/aliases ]
 then
 	for rc_file in ${XDG_CONFIG_HOME}/zsh/aliases/*
