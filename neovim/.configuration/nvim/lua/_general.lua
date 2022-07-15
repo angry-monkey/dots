@@ -24,3 +24,6 @@ vim.opt.mouse = "a"
 
 -- Use system clipboard
 vim.opt.clipboard = "unnamedplus"
+
+-- Completion
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
