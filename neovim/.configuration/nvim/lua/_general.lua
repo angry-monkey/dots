@@ -12,6 +12,7 @@ vim.opt.splitright = true
 
 -- Display tabulations and trailing spaces
 vim.opt.list = true
+vim.opt.listchars = { tab = "· ", trail = "-" }
 
 -- Enable highlighting while searching
 vim.opt.incsearch = true
