@@ -1,4 +1,5 @@
 require("_general")
+require("_packages")
 require("_theme")
 require("_treesitter")
 require("_lsp")
