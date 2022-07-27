@@ -1,4 +1,0 @@
-# vi: set ft=zsh :
-
-export PYENV_ROOT="${XDG_STATE_HOME}/pyenv"
-export PATH="${PYENV_ROOT}/shims:${PATH}"

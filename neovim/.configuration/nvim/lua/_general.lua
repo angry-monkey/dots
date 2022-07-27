@@ -17,14 +17,14 @@ vim.opt.listchars = { tab = "· ", trail = "-" }
 -- Enable highlighting while searching
 vim.opt.incsearch = true
 
--- Set spell language
-vim.opt.spelllang = "en_us"
-
--- Enable mouse support
-vim.opt.mouse = "a"
+-- Enables 24-bit RGB color in the TUI
+vim.opt.termguicolors = true
 
 -- Use system clipboard
 vim.opt.clipboard = "unnamedplus"
 
 -- Completion
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
+
+-- Enable mouse support
+vim.opt.mouse = "a"

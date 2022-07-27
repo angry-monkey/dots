@@ -1,5 +1,3 @@
-# vi: set ft=zsh :
-
 export LC_COLLATE=C
 
 export XDG_CACHE_HOME="${HOME}/.cache"
@@ -11,9 +9,9 @@ PATH="${HOME}/.local/bin:${PATH}"
 
 export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
-if [ -d ${XDG_CONFIG_HOME}/zsh/environment_variables ]
+if [ -d ${XDG_CONFIG_HOME}/zsh/environment ]
 then
-	for rc_file in ${XDG_CONFIG_HOME}/zsh/environment_variables/*
+	for rc_file in ${XDG_CONFIG_HOME}/zsh/environment/*
 	do
 		if [ -f "${rc_file}" ]
 		then

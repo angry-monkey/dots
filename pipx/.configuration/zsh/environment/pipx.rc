@@ -1,0 +1,1 @@
+export PIPX_HOME="${XDG_STATE_HOME}/pipx"

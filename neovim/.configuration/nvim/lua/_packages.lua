@@ -1,16 +1,17 @@
-local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-	packer_bootstrap = vim.fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
-		install_path })
+local status, packer = pcall(require, "packer")
+if not status
+then
+	vim.notify("packer not found")
+	return
 end
 
-return require('packer').startup(function(use)
+packer.startup(function(use)
 	use {
 		"wbthomason/packer.nvim",
 	}
 	use {
-		"altercation/vim-colors-solarized",
-		as = "solarized.vim",
+		"ishan9299/nvim-solarized-lua",
+		as = "solarized.nvim",
 	}
 	use {
 		"nvim-treesitter/nvim-treesitter",
@@ -44,7 +45,4 @@ return require('packer').startup(function(use)
 		"hrsh7th/cmp-path",
 		as = "cmp_path.nvim"
 	}
-	if packer_bootstrap then
-		require('packer').sync()
-	end
 end)

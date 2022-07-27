@@ -1,3 +1,18 @@
+local status, lsp_client = pcall(require, "lspconfig")
+if not status
+then
+	vim.notify("lspconfig not found")
+	return
+end
+
+local status, cmp = pcall(require, "cmp_nvim_lsp")
+if not status
+then
+	vim.notify("cmp_nvim_lsp not found")
+	return
+end
+
+
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }
@@ -42,9 +57,9 @@ local lsp_flags = {
 	debounce_text_changes = 150
 }
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = cmp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-require("lspconfig")["sumneko_lua"].setup {
+lsp_client["sumneko_lua"].setup {
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,

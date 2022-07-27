@@ -1,3 +1,0 @@
-# vi: set ft=zsh :
-
-alias enable_nvm="source ${NVM_DIR}/nvm.sh"

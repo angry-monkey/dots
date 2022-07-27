@@ -1,8 +1,14 @@
-local treesitter = require('nvim-treesitter.configs')
+local status, treesitter = pcall(require, "nvim-treesitter.configs")
+if not status
+then
+	vim.notify("treesitter not found")
+	return
+end
 
 treesitter.setup {
 	ensure_installed = {
 		"bash",
+		"c",
 		"css",
 		"dockerfile",
 		"go",
@@ -20,7 +26,7 @@ treesitter.setup {
 		"yaml"
 	},
 	sync_install = false,
-	auto_install = true,
+	auto_install = false,
 	ignore_install = { "" },
 	highlight = {
 		enable = true,
